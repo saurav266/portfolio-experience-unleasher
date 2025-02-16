@@ -2,6 +2,27 @@
 import React from 'react';
 import { User, Briefcase, Award } from 'lucide-react';
 
+const experiences = [
+  {
+    role: "Senior Frontend Developer",
+    company: "Tech Solutions Inc",
+    period: "2021 - Present",
+    description: "Leading development of enterprise web applications"
+  },
+  {
+    role: "Frontend Developer",
+    company: "Digital Agency",
+    period: "2019 - 2021",
+    description: "Built responsive web applications for various clients"
+  },
+  {
+    role: "Junior Developer",
+    company: "Startup Hub",
+    period: "2018 - 2019",
+    description: "Developed and maintained client websites"
+  }
+];
+
 const About = () => {
   return (
     <section className="py-24 px-6" id="about">
@@ -33,6 +54,27 @@ const About = () => {
               <h3 className="font-semibold">Achievements</h3>
               <p className="text-muted-foreground">Multiple award-winning projects and open source contributions</p>
             </div>
+          </div>
+        </div>
+
+        <div className="mt-24 space-y-8">
+          <div className="text-center space-y-4">
+            <span className="text-primary text-sm tracking-wider uppercase">Work Experience</span>
+            <h2 className="text-3xl font-bold">Professional Journey</h2>
+          </div>
+          
+          <div className="grid gap-6 md:grid-cols-3">
+            {experiences.map((exp, index) => (
+              <div key={index} className="glass p-6 rounded-lg space-y-4">
+                <Briefcase className="w-6 h-6 text-primary" />
+                <div>
+                  <h3 className="font-semibold text-lg">{exp.role}</h3>
+                  <p className="text-primary text-sm">{exp.company}</p>
+                  <p className="text-sm text-muted-foreground mt-1">{exp.period}</p>
+                </div>
+                <p className="text-muted-foreground">{exp.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
