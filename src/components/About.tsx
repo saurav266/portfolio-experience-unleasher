@@ -34,6 +34,13 @@ const About = () => {
             <p className="text-muted-foreground text-lg">
               With a focus on user experience and clean code, I build modern web applications that make a difference.
             </p>
+            <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-primary/20">
+              <img
+                src="/placeholder.svg"
+                alt="Profile"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
           
           <div className="grid gap-6 md:grid-cols-2">
