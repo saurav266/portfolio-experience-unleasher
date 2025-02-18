@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, Github, Linkedin, Instagram } from 'lucide-react';
+import { Mail, Github, Linkedin, Instagram, FileText } from 'lucide-react';
 
 const Contact = () => {
   return (
