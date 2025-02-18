@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, Github, Linkedin } from 'lucide-react';
+import { Mail, Github, Linkedin, Instagram } from 'lucide-react';
 
 const Contact = () => {
   return (
@@ -41,6 +41,26 @@ const Contact = () => {
           >
             <Linkedin className="w-5 h-5 text-primary" />
             <span>LinkedIn</span>
+          </a>
+
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="glass px-6 py-4 rounded-lg flex items-center gap-3 hover:bg-primary/5 transition-colors"
+          >
+            <Instagram className="w-5 h-5 text-primary" />
+            <span>Instagram</span>
+          </a>
+
+          <a
+            href="https://leetcode.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="glass px-6 py-4 rounded-lg flex items-center gap-3 hover:bg-primary/5 transition-colors"
+          >
+            <FileText className="w-5 h-5 text-primary" />
+            <span>LeetCode</span>
           </a>
         </div>
       </div>
