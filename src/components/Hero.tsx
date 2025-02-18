@@ -5,8 +5,8 @@ import { ArrowDown } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-6 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
+    <section className="min-h-screen flex flex-col items-center justify-center px-6 relative group transition-all duration-300 hover:bg-primary/5">
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent group-hover:from-primary/10" />
       
       <div className="relative space-y-6 text-center max-w-3xl mx-auto">
         <span className="inline-block text-primary/80 text-sm tracking-wider uppercase fade-in stagger-1">

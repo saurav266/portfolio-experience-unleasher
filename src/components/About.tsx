@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { User, Briefcase, Award } from 'lucide-react';
 
@@ -25,7 +24,7 @@ const experiences = [
 
 const About = () => {
   return (
-    <section className="py-24 px-6" id="about">
+    <section className="py-24 px-6 group transition-all duration-300 hover:bg-primary/5" id="about">
       <div className="container max-w-6xl">
         <div className="grid gap-12 md:grid-cols-2">
           <div className="space-y-6">

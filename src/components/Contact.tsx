@@ -1,10 +1,9 @@
-
 import React from 'react';
 import { Mail, Github, Linkedin, Instagram, FileText } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <section className="py-24 px-6" id="contact">
+    <section className="py-24 px-6 group transition-all duration-300 hover:bg-primary/5" id="contact">
       <div className="container max-w-6xl">
         <div className="text-center max-w-2xl mx-auto space-y-4">
           <span className="text-primary text-sm tracking-wider uppercase">Get in Touch</span>

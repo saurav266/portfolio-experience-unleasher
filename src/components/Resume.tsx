@@ -34,7 +34,7 @@ const Resume = () => {
   const visibleCertificates = showAllCertificates ? certificates : certificates.slice(0, 2);
 
   return (
-    <section className="py-24 px-6" id="resume">
+    <section className="py-24 px-6 group transition-all duration-300 hover:bg-primary/5" id="resume">
       <div className="container max-w-6xl">
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
           <span className="text-primary text-sm tracking-wider uppercase">Resume</span>

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Code, Database, Layout, Globe } from 'lucide-react';
 
@@ -27,7 +26,7 @@ const skillCategories = [
 
 const Skills = () => {
   return (
-    <section className="py-24 px-6 bg-secondary/30" id="skills">
+    <section className="py-24 px-6 bg-secondary/30 group transition-all duration-300 hover:bg-secondary/50" id="skills">
       <div className="container max-w-6xl">
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
           <span className="text-primary text-sm tracking-wider uppercase">Skills</span>
