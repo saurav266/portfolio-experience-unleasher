@@ -1,23 +1,42 @@
+
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 
 const projects = [
   {
-    title: "Project One",
-    description: "A modern web application built with React and TypeScript",
+    title: "E-Commerce Platform",
+    description: "A full-featured online shopping platform built with React and TypeScript",
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80",
     link: "#"
   },
   {
-    title: "Project Two",
-    description: "Mobile-first e-commerce platform with real-time updates",
+    title: "Task Management App",
+    description: "Real-time collaboration tool for team productivity",
     image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80",
     link: "#"
   },
   {
-    title: "Project Three",
-    description: "Interactive dashboard with data visualization",
+    title: "Analytics Dashboard",
+    description: "Interactive data visualization platform with real-time updates",
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
+    link: "#"
+  },
+  {
+    title: "Social Media Platform",
+    description: "Community-driven platform with real-time messaging and content sharing",
+    image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=800&q=80",
+    link: "#"
+  },
+  {
+    title: "Weather Application",
+    description: "Real-time weather tracking with interactive maps and forecasts",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+    link: "#"
+  },
+  {
+    title: "Fitness Tracking App",
+    description: "Personal workout planner with progress tracking and analytics",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80",
     link: "#"
   }
 ];
@@ -37,7 +56,7 @@ const Projects = () => {
             <a
               key={index}
               href={project.link}
-              className="group relative overflow-hidden rounded-lg"
+              className="group relative overflow-hidden rounded-lg bg-card transition-all duration-300 hover:shadow-xl"
             >
               <div className="aspect-[16/9] overflow-hidden">
                 <img
@@ -50,7 +69,7 @@ const Projects = () => {
               <div className="glass absolute inset-x-0 bottom-0 p-6 translate-y-4 transition-transform duration-300 group-hover:translate-y-0">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h3 className="font-semibold">{project.title}</h3>
+                    <h3 className="font-semibold text-lg">{project.title}</h3>
                     <p className="text-sm text-muted-foreground mt-1">{project.description}</p>
                   </div>
                   <ArrowUpRight className="w-5 h-5 text-primary transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
