@@ -1,24 +1,25 @@
+
 import React from 'react';
-import { User, Briefcase, Award } from 'lucide-react';
+import { User, Briefcase, Award, Code, Rocket, Heart } from 'lucide-react';
 
 const experiences = [
   {
     role: "Senior Frontend Developer",
     company: "Tech Solutions Inc",
     period: "2021 - Present",
-    description: "Leading development of enterprise web applications"
+    description: "Leading development of enterprise web applications and mentoring junior developers"
   },
   {
     role: "Frontend Developer",
     company: "Digital Agency",
     period: "2019 - 2021",
-    description: "Built responsive web applications for various clients"
+    description: "Built responsive web applications and implemented modern UI/UX designs"
   },
   {
     role: "Junior Developer",
     company: "Startup Hub",
     period: "2018 - 2019",
-    description: "Developed and maintained client websites"
+    description: "Developed and maintained client websites while learning best practices"
   }
 ];
 
@@ -29,9 +30,9 @@ const About = () => {
         <div className="grid gap-12 md:grid-cols-2">
           <div className="space-y-6">
             <span className="text-primary text-sm tracking-wider uppercase">About Me</span>
-            <h2 className="text-3xl md:text-4xl font-bold">Passionate about creating impactful digital solutions</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Passionate Developer & Creative Problem Solver</h2>
             <p className="text-muted-foreground text-lg">
-              With a focus on user experience and clean code, I build modern web applications that make a difference.
+              With over 5 years of experience in web development, I specialize in creating intuitive and performant applications that solve real-world problems. My journey in tech started with a curiosity about how things work on the web, and it has evolved into a passion for building exceptional digital experiences.
             </p>
             <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-primary/20">
               <img
@@ -44,22 +45,40 @@ const About = () => {
           
           <div className="grid gap-6 md:grid-cols-2">
             <div className="glass p-6 rounded-lg space-y-3">
-              <User className="w-8 h-8 text-primary" />
-              <h3 className="font-semibold">Background</h3>
-              <p className="text-muted-foreground">5+ years of experience in frontend development</p>
+              <Code className="w-8 h-8 text-primary" />
+              <h3 className="font-semibold">Technical Skills</h3>
+              <p className="text-muted-foreground">Expert in React, TypeScript, and modern web technologies</p>
             </div>
             
             <div className="glass p-6 rounded-lg space-y-3">
-              <Briefcase className="w-8 h-8 text-primary" />
-              <h3 className="font-semibold">Experience</h3>
-              <p className="text-muted-foreground">Worked with various startups and enterprises</p>
+              <Rocket className="w-8 h-8 text-primary" />
+              <h3 className="font-semibold">Innovation</h3>
+              <p className="text-muted-foreground">Always exploring new technologies and best practices</p>
             </div>
             
-            <div className="glass p-6 rounded-lg space-y-3 md:col-span-2">
-              <Award className="w-8 h-8 text-primary" />
-              <h3 className="font-semibold">Achievements</h3>
-              <p className="text-muted-foreground">Multiple award-winning projects and open source contributions</p>
+            <div className="glass p-6 rounded-lg space-y-3">
+              <Heart className="w-8 h-8 text-primary" />
+              <h3 className="font-semibold">Passion</h3>
+              <p className="text-muted-foreground">Dedicated to creating meaningful user experiences</p>
             </div>
+
+            <div className="glass p-6 rounded-lg space-y-3">
+              <Briefcase className="w-8 h-8 text-primary" />
+              <h3 className="font-semibold">Experience</h3>
+              <p className="text-muted-foreground">Worked with startups and enterprise companies</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-16 space-y-8">
+          <div className="prose max-w-none">
+            <h3 className="text-2xl font-semibold mb-4">My Journey</h3>
+            <p className="text-muted-foreground">
+              I began my career with a strong foundation in computer science and quickly discovered my passion for frontend development. Over the years, I've had the opportunity to work on diverse projects ranging from e-commerce platforms to complex enterprise applications. What drives me is the perfect blend of technical challenge and creative expression that web development offers.
+            </p>
+            <p className="text-muted-foreground mt-4">
+              Outside of coding, I'm an active contributor to the developer community, sharing knowledge through blog posts and open-source contributions. I believe in continuous learning and staying updated with the latest industry trends and technologies.
+            </p>
           </div>
         </div>
 
