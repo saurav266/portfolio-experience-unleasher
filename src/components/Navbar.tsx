@@ -14,9 +14,10 @@ const navItems = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [activeSection, setActiveSection] = useState('');
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    // Check for saved theme preference or system preference
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
@@ -27,6 +28,24 @@ const Navbar = () => {
       setTheme('dark');
       document.documentElement.classList.add('dark');
     }
+
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+
+      // Update active section based on scroll position
+      const sections = navItems.map(item => item.href.slice(1));
+      const currentSection = sections.find(section => {
+        if (section === '') return window.scrollY < window.innerHeight;
+        const element = document.getElementById(section);
+        if (!element) return false;
+        const rect = element.getBoundingClientRect();
+        return rect.top <= 100 && rect.bottom >= 100;
+      });
+      setActiveSection(currentSection || '');
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const toggleTheme = () => {
@@ -37,22 +56,29 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 inset-x-0 z-50">
-      <div className="glass">
+    <nav className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'}`}>
+      <div className={`glass backdrop-blur-xl ${isScrolled ? 'shadow-lg' : ''}`}>
         <div className="container max-w-6xl mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <a href="#" className="text-xl font-bold text-foreground">
+            <a 
+              href="#" 
+              className="text-xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent"
+            >
               Portfolio
             </a>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex md:items-center md:space-x-8">
+            <div className="hidden md:flex md:items-center md:space-x-1">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300
+                    ${activeSection === (item.href === '#' ? '' : item.href.slice(1))
+                      ? 'text-primary bg-primary/10'
+                      : 'text-muted-foreground hover:text-primary hover:bg-primary/5'
+                    }`}
                 >
                   {item.label}
                 </a>
@@ -61,13 +87,13 @@ const Navbar = () => {
               {/* Theme Toggle Button */}
               <button
                 onClick={toggleTheme}
-                className="p-2 rounded-lg hover:bg-primary/5 transition-colors"
+                className="ml-4 p-2 rounded-lg hover:bg-primary/5 transition-colors"
                 aria-label="Toggle theme"
               >
                 {theme === 'light' ? (
-                  <Moon className="w-5 h-5 text-muted-foreground" />
+                  <Moon className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
                 ) : (
-                  <Sun className="w-5 h-5 text-muted-foreground" />
+                  <Sun className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
                 )}
               </button>
             </div>
@@ -88,12 +114,13 @@ const Navbar = () => {
               
               <button
                 onClick={() => setIsOpen(!isOpen)}
+                className="p-2 rounded-lg hover:bg-primary/5 transition-colors"
                 aria-label="Toggle menu"
               >
                 {isOpen ? (
-                  <X className="h-6 w-6" />
+                  <X className="h-6 w-6 text-primary" />
                 ) : (
-                  <Menu className="h-6 w-6" />
+                  <Menu className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
                 )}
               </button>
             </div>
@@ -103,14 +130,18 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="glass md:hidden">
+        <div className="glass backdrop-blur-xl border-t border-primary/10 md:hidden">
           <div className="container max-w-6xl mx-auto px-4 py-4">
-            <div className="flex flex-col space-y-4">
+            <div className="flex flex-col space-y-1">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className={`px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300
+                    ${activeSection === (item.href === '#' ? '' : item.href.slice(1))
+                      ? 'text-primary bg-primary/10'
+                      : 'text-muted-foreground hover:text-primary hover:bg-primary/5'
+                    }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
