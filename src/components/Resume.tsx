@@ -1,14 +1,16 @@
+
 import React, { useState } from 'react';
 import { Download, FileText, Calendar, Building2, GraduationCap, ChevronDown, ChevronUp, Eye } from 'lucide-react';
 
 const certificates = [
   {
-  title: "Decode JAVA+DSA 1.0",
-  institution: "Physics Wallah",
-  date: "2025",
-  description: "Successfully completed the Decode Java+DSA 1.0 Program.",
-  image: "/certificate/java-Certificate_page-0001.png",
-  certificateImage: "/certificate/java-Certificate_page-0001.png"  },
+    title: "Decode JAVA+DSA 1.0",
+    institution: "Physics Wallah",
+    date: "2025",
+    description: "Successfully completed the Decode Java+DSA 1.0 Program.",
+    image: "/certificate/java-Certificate_page-0001.png",
+    certificateImage: "/certificate/java-Certificate_page-0001.png"  
+  },
   {
     title: "Backend Development", 
     institution: "Physics Wallah",
@@ -25,20 +27,36 @@ const certificates = [
     image: "/certificate/c++-1.png",
     certificateImage: "/certificate/c++-1.png"
   },
-  // {
-  //   title: "AWS Cloud Practitioner",
-  //   institution: "Amazon Web Services",
-  //   date: "2022",
-  //   description: "Cloud computing and AWS services certification.",
-  //   image: "/certificates/aws-cert.jpg",
-  //   certificateImage: "/certificates/aws-cert-full.jpg"
-  // }
+  {
+    title: "Web Development",
+    institution: "Udemy",
+    date: "2022",
+    description: "Comprehensive web development bootcamp covering frontend and backend technologies.",
+    image: "/certificate/java-Certificate_page-0001.png", // Using existing image as placeholder
+    certificateImage: "/certificate/java-Certificate_page-0001.png"
+  },
+  {
+    title: "JavaScript Mastery",
+    institution: "Codecademy",
+    date: "2023",
+    description: "Advanced JavaScript concepts including ES6+ features and async programming.",
+    image: "/certificate/BAckend development certificate saurav-1.png", // Using existing image as placeholder
+    certificateImage: "/certificate/BAckend development certificate saurav-1.png"
+  },
+  {
+    title: "React Framework",
+    institution: "Physics Wallah",
+    date: "2024",
+    description: "Building modern user interfaces with React and related technologies.",
+    image: "/certificate/c++-1.png", // Using existing image as placeholder
+    certificateImage: "/certificate/c++-1.png"
+  }
 ];
 
 const Resume = () => {
   const [showAllCertificates, setShowAllCertificates] = useState(false);
   const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null);
-  const visibleCertificates = showAllCertificates ? certificates : certificates.slice(0, 2);
+  const visibleCertificates = showAllCertificates ? certificates : certificates.slice(0, 3);
 
 
   return (
@@ -62,42 +80,6 @@ const Resume = () => {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
-          {/* Work Experience */}
-          {/* <div className="space-y-6">
-            <div className="flex items-center gap-3">
-              <FileText className="w-6 h-6 text-primary" />
-              <h3 className="text-xl font-semibold">Work Experience</h3>
-            </div>
-            <div className="space-y-4">
-              <div className="glass p-6 rounded-lg space-y-3">
-                <h4 className="font-semibold text-lg">Frontend Developer</h4>
-                <p className="text-primary text-sm">Tech Solutions Inc.</p>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Calendar className="w-4 h-4" />
-                  <span>2020 - Present</span>
-                </div>
-                <p className="text-muted-foreground">
-                  Developed and maintained user interfaces for web applications using React and
-                  related technologies. Collaborated with cross-functional teams to deliver
-                  high-quality software solutions.
-                </p>
-              </div>
-
-              <div className="glass p-6 rounded-lg space-y-3">
-                <h4 className="font-semibold text-lg">Web Developer Intern</h4>
-                <p className="text-primary text-sm">WebDev Studios</p>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Calendar className="w-4 h-4" />
-                  <span>2019 - 2020</span>
-                </div>
-                <p className="text-muted-foreground">
-                  Assisted in the development of web applications using HTML, CSS, and JavaScript.
-                  Gained experience in responsive web design and front-end development workflows.
-                </p>
-              </div>
-            </div>
-          </div> */}
-
           {/* Education and Certificates */}
           <div className="space-y-6">
             <div className="flex items-center gap-3">
@@ -164,32 +146,44 @@ const Resume = () => {
                   ))}
                 </div>
 
-                {certificates.length > 2 && (
-                  <button
-                    onClick={() => setShowAllCertificates(!showAllCertificates)}
-                    className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mx-auto mt-6"
-                  >
-                    {showAllCertificates ? (
-                      <>
-                        Show Less
-                        <ChevronUp className="w-4 h-4" />
-                      </>
-                    ) : (
-                      <>
-                        Show More Certificates
-                        <ChevronDown className="w-4 h-4" />
-                      </>
-                    )}
-                  </button>
-                )}
+                <button
+                  onClick={() => setShowAllCertificates(!showAllCertificates)}
+                  className="flex items-center justify-center w-full gap-2 mt-6 py-3 px-4 border border-primary/20 rounded-lg text-primary hover:bg-primary/5 transition-colors"
+                >
+                  {showAllCertificates ? (
+                    <>
+                      Show Less
+                      <ChevronUp className="w-4 h-4" />
+                    </>
+                  ) : (
+                    <>
+                      See More Certificates
+                      <ChevronDown className="w-4 h-4" />
+                    </>
+                  )}
+                </button>
               </div>
             </div>
           </div>
+
+          {/* Work Experience Section - Empty column for layout */}
+          <div className="hidden md:block">
+            {/* This column is intentionally left empty for layout purposes */}
+            {/* You can add work experience here in the future */}
+          </div>
         </div>
       </div>
+
+      {/* Certificate Modal */}
       {selectedCertificate && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" onClick={() => setSelectedCertificate(null)}>
-          <div className="relative max-w-4xl w-full bg-background rounded-lg overflow-hidden" onClick={e => e.stopPropagation()}>
+        <div 
+          className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-sm" 
+          onClick={() => setSelectedCertificate(null)}
+        >
+          <div 
+            className="relative max-w-4xl w-full bg-background rounded-lg overflow-hidden shadow-2xl" 
+            onClick={e => e.stopPropagation()}
+          >
             <img 
               src={selectedCertificate} 
               alt="Certificate" 
@@ -197,7 +191,7 @@ const Resume = () => {
             />
             <button
               onClick={() => setSelectedCertificate(null)}
-              className="absolute top-4 right-4 p-2 rounded-full bg-background/80 hover:bg-background transition-colors"
+              className="absolute top-4 right-4 p-2 rounded-full bg-background/80 hover:bg-background transition-colors text-xl leading-none"
             >
               ×
             </button>
