@@ -14,24 +14,6 @@ const viewCertificateBtns = document.querySelectorAll('.view-certificate-btn');
 const viewLinks = document.querySelectorAll('.view-link');
 const navItems = document.querySelectorAll('.nav-item');
 
-// Add animation classes to elements when they come into view
-function animateOnScroll() {
-  const elements = document.querySelectorAll('.skill-card, .skill-category, .experience-card, .education-card, .certificate-card, .project-card, .contact-link');
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('fade-in');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  
-  elements.forEach(element => {
-    observer.observe(element);
-  });
-}
-
 // Set initial theme based on user preference or localStorage
 function initTheme() {
   const savedTheme = localStorage.getItem('theme');
@@ -61,57 +43,26 @@ function updateThemeIcons(isDark) {
   }
 }
 
-// Toggle theme with animation
+// Toggle theme
 function toggleTheme() {
-  const body = document.body;
-  
-  // Add transition class
-  body.classList.add('theme-transition');
-  
-  // Toggle dark class
   const isDark = document.documentElement.classList.toggle('dark');
-  
-  // Store preference
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  
-  // Update icons
   updateThemeIcons(isDark);
-  
-  // Remove transition class after animation completes
-  setTimeout(() => {
-    body.classList.remove('theme-transition');
-  }, 500);
 }
 
-// Toggle mobile menu with animation
+// Toggle mobile menu
 function toggleMobileMenu() {
-  if (mobileMenu.classList.contains('hidden')) {
-    // Show menu
-    mobileMenu.classList.remove('hidden');
-    mobileMenu.style.opacity = '0';
-    mobileMenu.style.transform = 'translateY(-20px)';
-    
-    // Animate in
-    setTimeout(() => {
-      mobileMenu.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-      mobileMenu.style.opacity = '1';
-      mobileMenu.style.transform = 'translateY(0)';
-      mobileMenuBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-    }, 10);
+  mobileMenu.classList.toggle('hidden');
+  const isOpen = !mobileMenu.classList.contains('hidden');
+  
+  if (isOpen) {
+    mobileMenuBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
   } else {
-    // Animate out
-    mobileMenu.style.opacity = '0';
-    mobileMenu.style.transform = 'translateY(-20px)';
-    
-    // Hide after animation
-    setTimeout(() => {
-      mobileMenu.classList.add('hidden');
-      mobileMenuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
-    }, 300);
+    mobileMenuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
   }
 }
 
-// Handle scroll events with smooth animations
+// Handle scroll events
 function handleScroll() {
   // Add/remove scrolled class to navbar
   if (window.scrollY > 20) {
@@ -138,61 +89,30 @@ function handleScroll() {
     currentSection = '';
   }
   
-  // Update active class on nav items with subtle animations
+  // Update active class on nav items
   navItems.forEach(item => {
     const href = item.getAttribute('href');
     const sectionId = href === '#' ? '' : href.substring(1);
     
     if (sectionId === currentSection) {
-      if (!item.classList.contains('active')) {
-        item.classList.add('active');
-        // Add a subtle pulse animation
-        item.style.animation = 'pulse 0.5s';
-        setTimeout(() => {
-          item.style.animation = '';
-        }, 500);
-      }
+      item.classList.add('active');
     } else {
       item.classList.remove('active');
     }
   });
 }
 
-// Open certificate modal with animation
+// Open certificate modal
 function openCertificateModal(certSrc) {
   modalCertificateImg.src = certSrc;
   certificateModal.style.display = 'block';
   document.body.style.overflow = 'hidden';
-  
-  // Add entrance animation
-  setTimeout(() => {
-    certificateModal.style.opacity = '1';
-  }, 10);
 }
 
-// Close certificate modal with animation
+// Close certificate modal
 function closeCertificateModal() {
-  certificateModal.style.opacity = '0';
-  
-  setTimeout(() => {
-    certificateModal.style.display = 'none';
-    document.body.style.overflow = '';
-  }, 300);
-}
-
-// Smooth scroll to section
-function smoothScrollTo(target) {
-  const element = document.querySelector(target);
-  if (!element) return;
-  
-  const headerOffset = 80;
-  const elementPosition = element.getBoundingClientRect().top;
-  const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-  
-  window.scrollTo({
-    top: offsetPosition,
-    behavior: 'smooth'
-  });
+  certificateModal.style.display = 'none';
+  document.body.style.overflow = '';
 }
 
 // Event Listeners
@@ -208,18 +128,11 @@ certificateModal.addEventListener('click', function(event) {
   }
 });
 
-// Smooth scroll and close mobile menu when a nav item is clicked
+// Close mobile menu when a nav item is clicked
 navItems.forEach(item => {
-  item.addEventListener('click', function(e) {
-    const href = this.getAttribute('href');
-    
-    if (href !== '#') {
-      e.preventDefault();
-      smoothScrollTo(href);
-      
-      if (!mobileMenu.classList.contains('hidden')) {
-        toggleMobileMenu();
-      }
+  item.addEventListener('click', function() {
+    if (!mobileMenu.classList.contains('hidden')) {
+      toggleMobileMenu();
     }
   });
 });
@@ -233,53 +146,17 @@ viewCertificateBtns.forEach(btn => {
 });
 
 viewLinks.forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
+  link.addEventListener('click', function() {
     const certSrc = this.getAttribute('data-cert');
     openCertificateModal(certSrc);
   });
 });
 
-// Set up scroll event listener with throttling for performance
-let isScrolling = false;
-window.addEventListener('scroll', function() {
-  if (!isScrolling) {
-    window.requestAnimationFrame(function() {
-      handleScroll();
-      isScrolling = false;
-    });
-    isScrolling = true;
-  }
-});
-
-// Add CSS for theme transition
-const style = document.createElement('style');
-style.textContent = `
-  .theme-transition {
-    transition: background-color 0.5s, color 0.5s;
-  }
-  
-  .theme-transition * {
-    transition: background-color 0.5s, color 0.5s, border-color 0.5s, box-shadow 0.5s;
-  }
-  
-  @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-  }
-`;
-document.head.appendChild(style);
+// Set up scroll event listener
+window.addEventListener('scroll', handleScroll);
 
 // Initialize
 document.addEventListener('DOMContentLoaded', function() {
   initTheme();
   handleScroll(); // Initial call to set active nav item
-  animateOnScroll(); // Setup animations
-  
-  // Add staggered animation to hero content
-  const heroElements = document.querySelectorAll('.hero-content > *');
-  heroElements.forEach((el, index) => {
-    el.style.animationDelay = `${index * 0.2}s`;
-    el.classList.add('fade-in');
-  });
 });
