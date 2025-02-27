@@ -15,7 +15,7 @@ const Contact = () => {
         
         <div className="mt-12 flex flex-wrap justify-center gap-6">
           <a
-            href="mailto:hello@example.com"
+            href="mailto:saurav840963@gmail.com"
             className="glass px-6 py-4 rounded-lg flex items-center gap-3 hover:bg-primary/5 transition-colors"
           >
             <Mail className="w-5 h-5 text-primary" />
@@ -23,7 +23,7 @@ const Contact = () => {
           </a>
           
           <a
-            href="https://github.com"
+            href="https://github.com/saurav266"
             target="_blank"
             rel="noopener noreferrer"
             className="glass px-6 py-4 rounded-lg flex items-center gap-3 hover:bg-primary/5 transition-colors"
@@ -33,7 +33,7 @@ const Contact = () => {
           </a>
           
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/saurav-kumar-05a7502a7/"
             target="_blank"
             rel="noopener noreferrer"
             className="glass px-6 py-4 rounded-lg flex items-center gap-3 hover:bg-primary/5 transition-colors"
@@ -53,7 +53,7 @@ const Contact = () => {
           </a>
 
           <a
-            href="https://leetcode.com"
+            href="https://leetcode.com/u/saurav840963/"
             target="_blank"
             rel="noopener noreferrer"
             className="glass px-6 py-4 rounded-lg flex items-center gap-3 hover:bg-primary/5 transition-colors"

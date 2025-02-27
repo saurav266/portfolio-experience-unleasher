@@ -32,11 +32,11 @@ const About = () => {
             <span className="text-primary text-sm tracking-wider uppercase">About Me</span>
             <h2 className="text-3xl md:text-4xl font-bold">Passionate Developer & Creative Problem Solver</h2>
             <p className="text-muted-foreground text-lg">
-              With over 5 years of experience in web development, I specialize in creating intuitive and performant applications that solve real-world problems. My journey in tech started with a curiosity about how things work on the web, and it has evolved into a passion for building exceptional digital experiences.
+              Hi my name is Saurav kumar , I specialize in creating intuitive and performant applications that solve real-world problems. My journey in tech started with a curiosity about how things work on the web, and it has evolved into a passion for building exceptional digital experiences.
             </p>
             <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-primary/20">
               <img
-                src="/placeholder.svg"
+                src="public\WhatsApp Image 2025-02-16 at 16.29.01_7f2c548d.jpg"
                 alt="Profile"
                 className="w-full h-full object-cover"
               />
@@ -74,7 +74,7 @@ const About = () => {
           <div className="prose max-w-none">
             <h3 className="text-2xl font-semibold mb-4">My Journey</h3>
             <p className="text-muted-foreground">
-              I began my career with a strong foundation in computer science and quickly discovered my passion for frontend development. Over the years, I've had the opportunity to work on diverse projects ranging from e-commerce platforms to complex enterprise applications. What drives me is the perfect blend of technical challenge and creative expression that web development offers.
+              I began my career with a strong foundation in computer science and quickly discovered my passion for Full-Stack development. Over the years, I've had the opportunity to work on diverse projects ranging from e-commerce platforms to complex enterprise applications. What drives me is the perfect blend of technical challenge and creative expression that web development offers.
             </p>
             <p className="text-muted-foreground mt-4">
               Outside of coding, I'm an active contributor to the developer community, sharing knowledge through blog posts and open-source contributions. I believe in continuous learning and staying updated with the latest industry trends and technologies.

@@ -4,10 +4,10 @@ import { ArrowUpRight } from 'lucide-react';
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-featured online shopping platform built with React and TypeScript",
+    title: "Dicitinary",
+    description: "Coining",
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80",
-    link: "#"
+    link: "http://saurav-dictionary-23bc69.netlify.app"
   },
   {
     title: "Task Management App",
@@ -31,7 +31,7 @@ const projects = [
     title: "Weather Application",
     description: "Real-time weather tracking with interactive maps and forecasts",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
-    link: "#"
+    link: "http://saurav-dictionary-23bc69.netlify.app"
   },
   {
     title: "Fitness Tracking App",

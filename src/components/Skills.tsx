@@ -5,17 +5,17 @@ const skillCategories = [
   {
     title: "Frontend Development",
     icon: Layout,
-    skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Redux"]
+    skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", ]
   },
   {
     title: "Backend Development",
     icon: Database,
-    skills: ["Node.js", "Express", "PostgreSQL", "RESTful APIs", "GraphQL"]
+    skills: ["Node.js", "Express", "RESTful APIs", "MongooDb"]
   },
   {
     title: "Programming Languages",
     icon: Code,
-    skills: ["JavaScript", "TypeScript", "Python", "HTML5", "CSS3"]
+    skills: ["Java + DSA", "TypeScript", "JavaScript", "HTML5", "CSS3"]
   },
   {
     title: "Other Skills",

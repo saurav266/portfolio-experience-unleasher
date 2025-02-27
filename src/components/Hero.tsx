@@ -19,7 +19,7 @@ const Hero = () => {
         </h1>
         
         <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto fade-in stagger-3">
-          I'm a frontend developer passionate about building beautiful and functional web applications.
+          I'm a software-engineer passionate about building beautiful and functional web applications.
         </p>
       </div>
 
