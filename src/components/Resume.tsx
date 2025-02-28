@@ -209,7 +209,7 @@ const Resume = () => {
               {visibleAchievements.map((achievement, index) => (
                 <div 
                   key={index} 
-                  className="glass p-6 rounded-lg space-y-4 fade-in" 
+                  className="glass p-6 rounded-lg space-y-4 fade-in animate-in" 
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="flex items-start gap-4">
@@ -247,9 +247,6 @@ const Resume = () => {
                 </button>
               )}
             </div>
-
-            {/* Additional space for more future content */}
-            <div className="h-8"></div>
           </div>
         </div>
       </div>
