@@ -16,48 +16,48 @@ const certificates = [
     institution: "Physics Wallah",
     date: "2025",
     description: "Successfully completed the Decode Java+DSA 1.0 Program.",
-    image: "/certificate/java-Certificate_page-0001.png",
-    certificateImage: "/certificate/java-Certificate_page-0001.png"  
+    image: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png", // Using available image as fallback
+    certificateImage: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png"  
   },
   {
     title: "Backend Development", 
     institution: "Physics Wallah",
     date: "2025",
     description: "Deep dive into advanced React patterns and best practices.",
-    image: "/certificate/BAckend development certificate saurav-1.png",
-    certificateImage: "/certificate/BAckend development certificate saurav-1.png"
+    image: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png", // Using available image as fallback
+    certificateImage: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png"
   },
   {
     title: "C++",
     institution: "Physics Wallah",
     date: "2021",
     description: "Professional certification in C++ development.",
-    image: "/certificate/c++-1.png",
-    certificateImage: "/certificate/c++-1.png"
+    image: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png", // Using available image as fallback
+    certificateImage: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png"
   },
   {
     title: "Web Development",
     institution: "Udemy",
     date: "2022",
     description: "Comprehensive web development bootcamp covering frontend and backend technologies.",
-    image: "/certificate/java-Certificate_page-0001.png", // Using existing image as placeholder
-    certificateImage: "/certificate/java-Certificate_page-0001.png"
+    image: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png", // Using available image as fallback
+    certificateImage: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png"
   },
   {
     title: "JavaScript Mastery",
     institution: "Codecademy",
     date: "2023",
     description: "Advanced JavaScript concepts including ES6+ features and async programming.",
-    image: "/certificate/BAckend development certificate saurav-1.png", // Using existing image as placeholder
-    certificateImage: "/certificate/BAckend development certificate saurav-1.png"
+    image: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png", // Using available image as fallback
+    certificateImage: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png"
   },
   {
     title: "React Framework",
     institution: "Physics Wallah",
     date: "2024",
     description: "Building modern user interfaces with React and related technologies.",
-    image: "/certificate/c++-1.png", // Using existing image as placeholder
-    certificateImage: "/certificate/c++-1.png"
+    image: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png", // Using available image as fallback
+    certificateImage: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png"
   }
 ];
 
