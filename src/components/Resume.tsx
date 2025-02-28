@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Download, FileText, Calendar, Building2, GraduationCap, ChevronDown, ChevronUp, Eye } from 'lucide-react';
+import { Download, FileText, Calendar, Building2, GraduationCap, ChevronDown, ChevronUp, Eye, Award, Trophy, Medal, Star } from 'lucide-react';
 
 const certificates = [
   {
@@ -53,11 +53,40 @@ const certificates = [
   }
 ];
 
+const achievements = [
+  {
+    title: "Winner, National Coding Competition",
+    date: "2023",
+    description: "First place in the annual coding hackathon, developing an innovative solution for healthcare accessibility.",
+    icon: <Trophy className="w-8 h-8 text-yellow-500" />
+  },
+  {
+    title: "Top Contributor, Open Source Project",
+    date: "2024",
+    description: "Recognized as a top contributor to a major open-source framework with over 50 accepted pull requests.",
+    icon: <Star className="w-8 h-8 text-yellow-500" />
+  },
+  {
+    title: "Dean's List for Academic Excellence",
+    date: "2023",
+    description: "Maintained a perfect GPA and received recognition for outstanding academic performance.",
+    icon: <Award className="w-8 h-8 text-yellow-500" />
+  },
+  {
+    title: "Published Research Paper",
+    date: "2024",
+    description: "Co-authored a research paper on optimizing database performance that was published in a leading tech journal.",
+    icon: <FileText className="w-8 h-8 text-yellow-500" />
+  }
+];
+
 const Resume = () => {
   const [showAllCertificates, setShowAllCertificates] = useState(false);
+  const [showAllAchievements, setShowAllAchievements] = useState(false);
   const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null);
+  
   const visibleCertificates = showAllCertificates ? certificates : certificates.slice(0, 3);
-
+  const visibleAchievements = showAllAchievements ? achievements : achievements.slice(0, 2);
 
   return (
     <section className="py-24 px-6 group transition-all duration-300 hover:bg-primary/5" id="resume">
@@ -80,72 +109,74 @@ const Resume = () => {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
-          {/* Education and Certificates */}
-          <div className="space-y-6">
+          {/* Left Column: Education and Certificates */}
+          <div className="space-y-8">
             <div className="flex items-center gap-3">
               <GraduationCap className="w-6 h-6 text-primary" />
               <h3 className="text-xl font-semibold">Education & Certificates</h3>
             </div>
-            <div className="space-y-6">
-              <div className="glass p-6 rounded-lg space-y-3">
-                <h4 className="font-semibold text-lg">Bachelor of Computer Science</h4>
-                <p className="text-primary text-sm">Sarala Birla University,Ranchi</p>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Calendar className="w-4 h-4" />
-                  <span>2023 - 2027</span>
-                </div>
-                <p className="text-muted-foreground">
-                  Specialized in Software Engineering with a focus on web technologies and Problem solving.
-                  Graduated with First Class Honours.
-                </p>
+            
+            {/* Education */}
+            <div className="glass p-6 rounded-lg space-y-3">
+              <h4 className="font-semibold text-lg">Bachelor of Computer Science</h4>
+              <p className="text-primary text-sm">Sarala Birla University, Ranchi</p>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Calendar className="w-4 h-4" />
+                <span>2023 - 2027</span>
               </div>
+              <p className="text-muted-foreground">
+                Specialized in Software Engineering with a focus on web technologies and Problem solving.
+                Graduated with First Class Honours.
+              </p>
+            </div>
 
-              {/* Certificates Section */}
+            {/* Certificates Section */}
+            <div className="space-y-4">
+              <h4 className="font-semibold text-lg">Professional Certificates</h4>
               <div className="space-y-4">
-                <h4 className="font-semibold text-lg">Professional Certificates</h4>
-                <div className="space-y-4">
-                  {visibleCertificates.map((cert, index) => (
-                    <div 
-                      key={index} 
-                      className="glass p-6 rounded-lg space-y-4 fade-in" 
-                      style={{ animationDelay: `${index * 0.1}s` }}
-                    >
-                      <div className="aspect-[16/9] overflow-hidden rounded-lg relative group">
-                        <img
-                          src={cert.image}
-                          alt={cert.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
-                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                          <button
-                            onClick={() => setSelectedCertificate(cert.certificateImage)}
-                            className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
-                          >
-                            <Eye className="w-4 h-4" />
-                            View Certificate
-                          </button>
-                        </div>
-                      </div>
-                      <div className="space-y-3">
-                        <h4 className="font-semibold text-lg">{cert.title}</h4>
-                        <p className="text-primary text-sm">{cert.institution}</p>
-                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <Calendar className="w-4 h-4" />
-                          <span>{cert.date}</span>
-                        </div>
-                        <p className="text-muted-foreground">{cert.description}</p>
+                {visibleCertificates.map((cert, index) => (
+                  <div 
+                    key={index} 
+                    className="glass p-6 rounded-lg space-y-4 fade-in" 
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <div className="aspect-[16/9] overflow-hidden rounded-lg relative group">
+                      <img
+                        src={cert.image}
+                        alt={cert.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <button
                           onClick={() => setSelectedCertificate(cert.certificateImage)}
-                          className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-sm"
+                          className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
                         >
                           <Eye className="w-4 h-4" />
                           View Certificate
                         </button>
                       </div>
                     </div>
-                  ))}
-                </div>
+                    <div className="space-y-3">
+                      <h4 className="font-semibold text-lg">{cert.title}</h4>
+                      <p className="text-primary text-sm">{cert.institution}</p>
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <Calendar className="w-4 h-4" />
+                        <span>{cert.date}</span>
+                      </div>
+                      <p className="text-muted-foreground">{cert.description}</p>
+                      <button
+                        onClick={() => setSelectedCertificate(cert.certificateImage)}
+                        className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-sm"
+                      >
+                        <Eye className="w-4 h-4" />
+                        View Certificate
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
 
+              {certificates.length > 3 && (
                 <button
                   onClick={() => setShowAllCertificates(!showAllCertificates)}
                   className="flex items-center justify-center w-full gap-2 mt-6 py-3 px-4 border border-primary/20 rounded-lg text-primary hover:bg-primary/5 transition-colors"
@@ -162,14 +193,63 @@ const Resume = () => {
                     </>
                   )}
                 </button>
-              </div>
+              )}
             </div>
           </div>
 
-          {/* Work Experience Section - Empty column for layout */}
-          <div className="hidden md:block">
-            {/* This column is intentionally left empty for layout purposes */}
-            {/* You can add work experience here in the future */}
+          {/* Right Column: Achievements */}
+          <div className="space-y-8">
+            <div className="flex items-center gap-3">
+              <Trophy className="w-6 h-6 text-primary" />
+              <h3 className="text-xl font-semibold">Achievements</h3>
+            </div>
+            
+            {/* Achievements Section */}
+            <div className="space-y-4">
+              {visibleAchievements.map((achievement, index) => (
+                <div 
+                  key={index} 
+                  className="glass p-6 rounded-lg space-y-4 fade-in" 
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 p-3 bg-primary/10 rounded-full">
+                      {achievement.icon}
+                    </div>
+                    <div className="space-y-3">
+                      <h4 className="font-semibold text-lg">{achievement.title}</h4>
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <Calendar className="w-4 h-4" />
+                        <span>{achievement.date}</span>
+                      </div>
+                      <p className="text-muted-foreground">{achievement.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+              
+              {achievements.length > 2 && (
+                <button
+                  onClick={() => setShowAllAchievements(!showAllAchievements)}
+                  className="flex items-center justify-center w-full gap-2 mt-6 py-3 px-4 border border-primary/20 rounded-lg text-primary hover:bg-primary/5 transition-colors"
+                >
+                  {showAllAchievements ? (
+                    <>
+                      Show Less
+                      <ChevronUp className="w-4 h-4" />
+                    </>
+                  ) : (
+                    <>
+                      See More Achievements
+                      <ChevronDown className="w-4 h-4" />
+                    </>
+                  )}
+                </button>
+              )}
+            </div>
+
+            {/* Additional space for more future content */}
+            <div className="h-8"></div>
           </div>
         </div>
       </div>
