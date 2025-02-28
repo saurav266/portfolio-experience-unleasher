@@ -4,6 +4,14 @@ import { Download, FileText, Calendar, Building2, GraduationCap, ChevronDown, Ch
 
 const certificates = [
   {
+    title: "Backend Development Course",
+    institution: "Physics Wallah",
+    date: "January 2025",
+    description: "Successfully completed the Backend Development Course Program certified by Mr. Alakh Pandey.",
+    image: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png",
+    certificateImage: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png"  
+  },
+  {
     title: "Decode JAVA+DSA 1.0",
     institution: "Physics Wallah",
     date: "2025",
