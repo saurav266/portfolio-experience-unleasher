@@ -36,22 +36,22 @@ const certificates = [
     image: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png", // Using available image as fallback
     certificateImage: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png"
   },
-  {
-    title: "JavaScript Mastery",
-    institution: "Codecademy",
-    date: "2023",
-    description: "Advanced JavaScript concepts including ES6+ features and async programming.",
-    image: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png", // Using available image as fallback
-    certificateImage: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png"
-  },
-  {
-    title: "React Framework",
-    institution: "Physics Wallah",
-    date: "2024",
-    description: "Building modern user interfaces with React and related technologies.",
-    image: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png", // Using available image as fallback
-    certificateImage: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png"
-  }
+  // {
+  //   title: "JavaScript Mastery",
+  //   institution: "Codecademy",
+  //   date: "2023",
+  //   description: "Advanced JavaScript concepts including ES6+ features and async programming.",
+  //   image: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png", // Using available image as fallback
+  //   certificateImage: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png"
+  // },
+  // {
+  //   title: "React Framework",
+  //   institution: "Physics Wallah",
+  //   date: "2024",
+  //   description: "Building modern user interfaces with React and related technologies.",
+  //   image: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png", // Using available image as fallback
+  //   certificateImage: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png"
+  // }
 ];
 
 const achievements = [
