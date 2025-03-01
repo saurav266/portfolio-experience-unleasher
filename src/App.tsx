@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -8,12 +9,19 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// Determine if we're running on GitHub Pages
+const isGitHubPages = window.location.hostname.includes('github.io');
+// Get the repository name from the URL if on GitHub Pages
+const repoName = isGitHubPages ? window.location.pathname.split('/')[1] : '';
+// Set the basename for BrowserRouter
+const basename = isGitHubPages ? `/${repoName}` : '/';
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename={basename}>
         <Routes>
           <Route path="/" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
