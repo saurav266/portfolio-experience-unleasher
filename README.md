@@ -80,8 +80,9 @@ Simply open [Lovable](https://lovable.dev/projects/fdebdb66-fb56-45a9-a9dd-1abc8
    ```
 5. Deploy your site:
    ```
-   npm run deploy
+   npm run deploy GITHUB_PAGES=true
    ```
+   This sets the environment variable to use the correct base path
 6. Configure GitHub Pages in your repository settings to use the gh-pages branch
 
 ### Deploy with Netlify
