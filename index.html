@@ -17,19 +17,17 @@
       // MIT License
       // https://github.com/rafgraph/spa-github-pages
       (function() {
-        // Check if we need to redirect
-        var redirect = new URLSearchParams(window.location.search).get('redirect');
-        if (redirect) {
-          // Remove the query parameter from the URL
-          var url = window.location.pathname + 
-                    window.location.search.replace(/[?&]redirect=[^&]*/, '').replace(/^&/, '?') + 
-                    window.location.hash;
-          
-          // Replace the state so that the URL looks clean
-          window.history.replaceState(null, null, url);
-          
-          // Navigate to the original URL
-          window.history.pushState(null, null, redirect);
+        // This works for GitHub Pages
+        var location = window.location;
+        var redirect = location.search.match(/\?\/(.*)/);
+        
+        if (redirect && redirect.length > 1) {
+          // Remove the query parameter
+          history.replaceState(null, null, 
+            location.pathname.replace(/\/?$/, '/') +
+            redirect[1].replace(/&/g, '~and~').replace(/\?/g, '&') +
+            location.hash
+          );
         }
       })();
     </script>

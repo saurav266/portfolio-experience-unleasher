@@ -67,7 +67,7 @@ This project is built with .
 Simply open [Lovable](https://lovable.dev/projects/fdebdb66-fb56-45a9-a9dd-1abc85e6519a) and click on Share -> Publish.
 
 ### Deploy with GitHub Pages
-1. Create a GitHub repository for your project
+1. Create a GitHub repository for your project (if you haven't already)
 2. Push your code to the repository
 3. Install the gh-pages package:
    ```
@@ -76,14 +76,17 @@ Simply open [Lovable](https://lovable.dev/projects/fdebdb66-fb56-45a9-a9dd-1abc8
 4. Add these scripts to your package.json:
    ```json
    "predeploy": "npm run build",
-   "deploy": "gh-pages -d dist"
+   "deploy": "cross-env GITHUB_PAGES=true npm run build && gh-pages -d dist"
    ```
-5. Deploy your site:
+5. Install cross-env to set the environment variable:
    ```
-   npm run deploy GITHUB_PAGES=true
+   npm install cross-env --save-dev
    ```
-   This sets the environment variable to use the correct base path
-6. Configure GitHub Pages in your repository settings to use the gh-pages branch
+6. Deploy your site:
+   ```
+   npm run deploy
+   ```
+7. Configure GitHub Pages in your repository settings to use the gh-pages branch
 
 ### Deploy with Netlify
 1. Fork or clone the repository to your GitHub account

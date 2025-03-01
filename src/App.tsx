@@ -3,31 +3,28 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-// Determine if we're running on GitHub Pages
-const isGitHubPages = window.location.hostname.includes('github.io');
-// Get the repository name from the URL if on GitHub Pages
-const repoName = isGitHubPages ? window.location.pathname.split('/')[1] : '';
-// Set the basename for BrowserRouter
-const basename = isGitHubPages ? `/${repoName}` : '/';
+// Use HashRouter for GitHub Pages to avoid the need for server configuration
+// This is more reliable for GitHub Pages deployments
+const Router = window.location.hostname.includes('github.io') ? HashRouter : BrowserRouter;
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename={basename}>
+      <Router>
         <Routes>
           <Route path="/" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </Router>
     </TooltipProvider>
   </QueryClientProvider>
 );
