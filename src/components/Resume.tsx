@@ -8,32 +8,25 @@ const certificates = [
     institution: "Physics Wallah",
     date: "January 2025",
     description: "Successfully completed the Backend Development Course Program certified by Mr. Alakh Pandey.",
-    image: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png",
-    certificateImage: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png"  
+    image: "src/public/certificate/BAckend development certificate saurav-1.png",
+    certificateImage: "src/public/certificate/BAckend development certificate saurav-1.png"  
   },
   {
     title: "Decode JAVA+DSA 1.0",
     institution: "Physics Wallah",
     date: "2025",
     description: "Successfully completed the Decode Java+DSA 1.0 Program.",
-    image: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png", // Using available image as fallback
-    certificateImage: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png"  
+    image: "src/public/certificate/java-Certificate_page-0001.png", // Using available image as fallback
+    certificateImage: "src/public/certificate/java-Certificate_page-0001.png"  
   },
-  {
-    title: "Backend Development", 
-    institution: "Physics Wallah",
-    date: "2025",
-    description: "Deep dive into advanced React patterns and best practices.",
-    image: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png", // Using available image as fallback
-    certificateImage: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png"
-  },
+  
   {
     title: "C++",
     institution: "Physics Wallah",
     date: "2021",
     description: "Professional certification in C++ development.",
-    image: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png", // Using available image as fallback
-    certificateImage: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png"
+    image: "src/public/certificate/c++-1.png", // Using available image as fallback
+    certificateImage: "src/public/certificate/c++-1.png"
   },
   {
     title: "Web Development",
@@ -63,29 +56,29 @@ const certificates = [
 
 const achievements = [
   {
-    title: "Winner, National Coding Competition",
-    date: "2023",
-    description: "First place in the annual coding hackathon, developing an innovative solution for healthcare accessibility.",
+    title: "Winner,  Coding Competition",
+    date: "2024",
+    description: "Third place in the annual coding hackathon.",
     icon: <Trophy className="w-8 h-8 text-yellow-500" />
   },
-  {
-    title: "Top Contributor, Open Source Project",
-    date: "2024",
-    description: "Recognized as a top contributor to a major open-source framework with over 50 accepted pull requests.",
-    icon: <Star className="w-8 h-8 text-yellow-500" />
-  },
-  {
-    title: "Dean's List for Academic Excellence",
-    date: "2023",
-    description: "Maintained a perfect GPA and received recognition for outstanding academic performance.",
-    icon: <Award className="w-8 h-8 text-yellow-500" />
-  },
-  {
-    title: "Published Research Paper",
-    date: "2024",
-    description: "Co-authored a research paper on optimizing database performance that was published in a leading tech journal.",
-    icon: <FileText className="w-8 h-8 text-yellow-500" />
-  }
+  // {
+  //   title: "Top Contributor, Open Source Project",
+  //   date: "2024",
+  //   description: "Recognized as a top contributor to a major open-source framework with over 50 accepted pull requests.",
+  //   icon: <Star className="w-8 h-8 text-yellow-500" />
+  // },
+  // {
+  //   title: "Dean's List for Academic Excellence",
+  //   date: "2023",
+  //   description: "Maintained a perfect GPA and received recognition for outstanding academic performance.",
+  //   icon: <Award className="w-8 h-8 text-yellow-500" />
+  // },
+  // {
+  //   title: "Published Research Paper",
+  //   date: "2024",
+  //   description: "Co-authored a research paper on optimizing database performance that was published in a leading tech journal.",
+  //   icon: <FileText className="w-8 h-8 text-yellow-500" />
+  // }
 ];
 
 const Resume = () => {
