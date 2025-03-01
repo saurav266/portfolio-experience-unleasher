@@ -99,7 +99,7 @@ const Resume = () => {
             A detailed view of my experiences, skills, and qualifications.
           </p>
           <a
-            href="/Saurav_Resume (2).jpg"
+            href="src/public/Saurav_Resume (2).jpg"
             download="Saurav_Resume.jpg"
             className="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-md gap-2"
           >
