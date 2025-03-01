@@ -1,26 +1,47 @@
+
 import React from 'react';
-import { Code, Database, Layout, Globe } from 'lucide-react';
+import { Code, Database, Layout, Globe, Server, Terminal, Monitor, Braces } from 'lucide-react';
 
 const skillCategories = [
   {
     title: "Frontend Development",
     icon: Layout,
-    skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", ]
+    skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Redux", "Material UI"]
   },
   {
     title: "Backend Development",
-    icon: Database,
-    skills: ["Node.js", "Express", "RESTful APIs", "MongooDb"]
+    icon: Server,
+    skills: ["Node.js", "Express", "RESTful APIs", "MongoDB", "Firebase", "GraphQL"]
   },
   {
     title: "Programming Languages",
     icon: Code,
-    skills: ["Java + DSA", "TypeScript", "JavaScript", "HTML5", "CSS3"]
+    skills: ["Java + DSA", "TypeScript", "JavaScript", "HTML5", "CSS3", "Python"]
+  },
+  {
+    title: "DevOps & Tools",
+    icon: Terminal,
+    skills: ["Git", "Docker", "AWS", "CI/CD", "Bash", "Kubernetes"]
+  },
+  {
+    title: "Database Management",
+    icon: Database,
+    skills: ["MongoDB", "MySQL", "PostgreSQL", "Redis", "Firebase"]
+  },
+  {
+    title: "UI/UX Design",
+    icon: Monitor,
+    skills: ["Figma", "Adobe XD", "Wireframing", "Prototyping", "Responsive Design"]
+  },
+  {
+    title: "Testing & Quality",
+    icon: Braces,
+    skills: ["Jest", "React Testing Library", "Cypress", "Mocha", "Chai"]
   },
   {
     title: "Other Skills",
     icon: Globe,
-    skills: ["Git", "Docker", "AWS", "Agile", "UI/UX Design"]
+    skills: ["Agile/Scrum", "Problem Solving", "Team Collaboration", "Technical Writing", "Mentoring"]
   }
 ];
 
@@ -42,7 +63,7 @@ const Skills = () => {
             return (
               <div 
                 key={index} 
-                className="glass p-6 rounded-lg space-y-4 fade-in"
+                className="glass p-6 rounded-lg space-y-4 hover:bg-primary/5 transition-all duration-300"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <Icon className="w-8 h-8 text-primary" />

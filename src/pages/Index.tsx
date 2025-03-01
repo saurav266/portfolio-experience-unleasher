@@ -1,26 +1,28 @@
 
-import React from 'react';
-import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Skills from '@/components/Skills';
-import Resume from '@/components/Resume';
-import Projects from '@/components/Projects';
-import Contact from '@/components/Contact';
+import React from "react";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Skills from "@/components/Skills";
+import Projects from "@/components/Projects";
+import Contact from "@/components/Contact";
+import Testimonials from "@/components/Testimonials";
+import Resume from "@/components/Resume";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <>
+    <div className="min-h-screen antialiased">
       <Navbar />
-      <main className="overflow-hidden pt-16">
-        <Hero />
-        <About />
-        <Skills />
-        <Resume />
-        <Projects />
-        <Contact />
-      </main>
-    </>
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Testimonials />
+      <Resume />  
+      <Contact />
+      <Footer />
+    </div>
   );
 };
 
