@@ -3,24 +3,24 @@ import React from 'react';
 import { User, Briefcase, Award, Code, Rocket, Heart } from 'lucide-react';
 
 const experiences = [
-  {
-    role: "Senior Frontend Developer",
-    company: "Tech Solutions Inc",
-    period: "2021 - Present",
-    description: "Leading development of enterprise web applications and mentoring junior developers"
-  },
-  {
-    role: "Frontend Developer",
-    company: "Digital Agency",
-    period: "2019 - 2021",
-    description: "Built responsive web applications and implemented modern UI/UX designs"
-  },
-  {
-    role: "Junior Developer",
-    company: "Startup Hub",
-    period: "2018 - 2019",
-    description: "Developed and maintained client websites while learning best practices"
-  }
+  // {
+  //   role: "Senior Frontend Developer",
+  //   company: "Tech Solutions Inc",
+  //   period: "2021 - Present",
+  //   description: "Leading development of enterprise web applications and mentoring junior developers"
+  // },
+  // {
+  //   role: "Frontend Developer",
+  //   company: "Digital Agency",
+  //   period: "2019 - 2021",
+  //   description: "Built responsive web applications and implemented modern UI/UX designs"
+  // },
+  // {
+  //   role: "Junior Developer",
+  //   company: "Startup Hub",
+  //   period: "2018 - 2019",
+  //   description: "Developed and maintained client websites while learning best practices"
+  // }
 ];
 
 const About = () => {
