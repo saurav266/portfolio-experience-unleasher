@@ -36,7 +36,7 @@ const About = () => {
             </p>
             <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-primary/20">
               <img
-                src="public\WhatsApp Image 2025-02-16 at 16.29.01_7f2c548d.jpg"
+                src="src/public/WhatsApp Image 2025-02-16 at 16.29.01_7f2c548d.jpg"
                 alt="Profile"
                 className="w-full h-full object-cover"
               />
