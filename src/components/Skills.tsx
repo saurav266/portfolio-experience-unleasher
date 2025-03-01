@@ -16,7 +16,7 @@ const skillCategories = [
   {
     title: "Programming Languages",
     icon: Code,
-    skills: ["Java + DSA", "TypeScript", "JavaScript", "HTML5", "CSS3", "Python"]
+    skills: ["Java + DSA", "TypeScript", "JavaScript", "HTML5", "CSS3", "C++"]
   },
   {
     title: "DevOps & Tools",
@@ -28,21 +28,9 @@ const skillCategories = [
     icon: Database,
     skills: ["MongoDB", "MySQL", "PostgreSQL", "Redis", "Firebase"]
   },
-  {
-    title: "UI/UX Design",
-    icon: Monitor,
-    skills: ["Figma", "Adobe XD", "Wireframing", "Prototyping", "Responsive Design"]
-  },
-  {
-    title: "Testing & Quality",
-    icon: Braces,
-    skills: ["Jest", "React Testing Library", "Cypress", "Mocha", "Chai"]
-  },
-  {
-    title: "Other Skills",
-    icon: Globe,
-    skills: ["Agile/Scrum", "Problem Solving", "Team Collaboration", "Technical Writing", "Mentoring"]
-  }
+ 
+  
+  
 ];
 
 const Skills = () => {
