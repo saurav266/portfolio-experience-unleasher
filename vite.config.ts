@@ -15,7 +15,7 @@ export default defineConfig(({ mode }) => ({
     mode === 'development' &&
     componentTagger(),
   ].filter(Boolean),
-  base: "/", // Changed from "/portfolio" to "/" for Netlify deployment
+  base: "./", // Changed for GitHub Pages deployment
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
