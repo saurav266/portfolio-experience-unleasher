@@ -29,10 +29,34 @@ const achievements = [
   // }
 ];
 
+const certificates = [
+  {
+    title: "Backend Development Certificate",
+    organization: "Udemy",
+    date: "2023",
+    image: "/BAckend development certificate saurav-1.png"
+  },
+  {
+    title: "C++ Certificate",
+    organization: "HackerRank",
+    date: "2022",
+    image: "/certificate/c++-1.png"
+  },
+  {
+    title: "Java Certificate",
+    organization: "Coursera",
+    date: "2023",
+    image: "/certificate/java-Certificate_page-0001.png"
+  }
+];
+
 const Resume = () => {
   const [showAllAchievements, setShowAllAchievements] = useState(false);
+  const [showAllCertificates, setShowAllCertificates] = useState(false);
+  const [selectedCertificate, setSelectedCertificate] = useState(null);
   
   const visibleAchievements = showAllAchievements ? achievements : achievements.slice(0, 2);
+  const visibleCertificates = showAllCertificates ? certificates : certificates.slice(0, 2);
 
   return (
     <section className="py-24 px-6 group transition-all duration-300 hover:bg-primary/5" id="resume">
@@ -121,8 +145,88 @@ const Resume = () => {
                 )}
               </div>
             </div>
+            
+            {/* Certificates Section */}
+            <div className="space-y-4 mt-12">
+              <div className="flex items-center gap-3">
+                <Award className="w-6 h-6 text-primary" />
+                <h3 className="text-xl font-semibold">Certificates</h3>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
+                {visibleCertificates.map((certificate, index) => (
+                  <div 
+                    key={index} 
+                    className="glass p-6 rounded-lg space-y-4 cursor-pointer hover:shadow-md transition-all"
+                    onClick={() => setSelectedCertificate(certificate)}
+                  >
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-muted">
+                      <img 
+                        src={certificate.image} 
+                        alt={certificate.title} 
+                        className="object-cover w-full h-full transition-all hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <Eye className="w-8 h-8 text-white" />
+                      </div>
+                    </div>
+                    <h4 className="font-semibold text-lg">{certificate.title}</h4>
+                    <p className="text-primary text-sm">{certificate.organization}</p>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <Calendar className="w-4 h-4" />
+                      <span>{certificate.date}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              {certificates.length > 2 && (
+                <button
+                  onClick={() => setShowAllCertificates(!showAllCertificates)}
+                  className="flex items-center justify-center w-full gap-2 mt-6 py-3 px-4 border border-primary/20 rounded-lg text-primary hover:bg-primary/5 transition-colors"
+                >
+                  {showAllCertificates ? (
+                    <>
+                      Show Less
+                      <ChevronUp className="w-4 h-4" />
+                    </>
+                  ) : (
+                    <>
+                      See More Certificates
+                      <ChevronDown className="w-4 h-4" />
+                    </>
+                  )}
+                </button>
+              )}
+            </div>
           </div>
         </div>
+        
+        {/* Certificate Viewer Modal */}
+        {selectedCertificate && (
+          <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 md:p-8">
+            <div className="bg-background rounded-lg max-w-4xl w-full max-h-[90vh] overflow-auto p-6">
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-xl font-semibold">{selectedCertificate.title}</h3>
+                <button 
+                  onClick={() => setSelectedCertificate(null)}
+                  className="p-2 rounded-full hover:bg-muted transition-colors"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                </button>
+              </div>
+              <div className="aspect-auto max-h-[70vh] overflow-hidden rounded-md">
+                <img 
+                  src={selectedCertificate.image} 
+                  alt={selectedCertificate.title}
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+              <div className="mt-4">
+                <p className="text-muted-foreground mb-2">{selectedCertificate.organization} • {selectedCertificate.date}</p>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
