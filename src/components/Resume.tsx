@@ -31,6 +31,12 @@ const achievements = [
 
 const certificates = [
   {
+    title: "DECODE JAVA+DSA 1.0",
+    organization: "Physics Wallah",
+    date: "January 2025",
+    image: "/lovable-uploads/d4d1d618-d75a-4bb8-aa56-a2b7bee9ee19.png"
+  },
+  {
     title: "Backend Development Certificate",
     organization: "Udemy",
     date: "2023",
