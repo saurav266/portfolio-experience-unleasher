@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Download, FileText, Calendar, Building2, GraduationCap, ChevronDown, ChevronUp, Eye, Award, Trophy, Medal, Star } from 'lucide-react';
 
@@ -8,16 +7,16 @@ const certificates = [
     institution: "Physics Wallah",
     date: "January 2025",
     description: "Successfully completed the Backend Development Course Program certified by Mr. Alakh Pandey.",
-    image: "src/public/certificate/BAckend development certificate saurav-1.png",
-    certificateImage: "src/public/certificate/BAckend development certificate saurav-1.png"  
+    image: "/certificate/BAckend development certificate saurav-1.png",
+    certificateImage: "/certificate/BAckend development certificate saurav-1.png"  
   },
   {
     title: "Decode JAVA+DSA 1.0",
     institution: "Physics Wallah",
     date: "2025",
     description: "Successfully completed the Decode Java+DSA 1.0 Program.",
-    image: "src/public/certificate/java-Certificate_page-0001.png", // Using available image as fallback
-    certificateImage: "src/public/certificate/java-Certificate_page-0001.png"  
+    image: "/certificate/java-Certificate_page-0001.png", 
+    certificateImage: "/certificate/java-Certificate_page-0001.png"  
   },
   
   {
@@ -25,15 +24,15 @@ const certificates = [
     institution: "Physics Wallah",
     date: "2021",
     description: "Professional certification in C++ development.",
-    image: "src/public/certificate/c++-1.png", // Using available image as fallback
-    certificateImage: "src/public/certificate/c++-1.png"
+    image: "/certificate/c++-1.png",
+    certificateImage: "/certificate/c++-1.png"
   },
   {
     title: "Web Development",
     institution: "Udemy",
     date: "2022",
     description: "Comprehensive web development bootcamp covering frontend and backend technologies.",
-    image: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png", // Using available image as fallback
+    image: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png",
     certificateImage: "/lovable-uploads/e603ad3d-2f63-4a48-85ab-6c71e35de6ee.png"
   },
   // {
@@ -99,7 +98,7 @@ const Resume = () => {
             A detailed view of my experiences, skills, and qualifications.
           </p>
           <a
-            href="src/public/Saurav_Resume (2).jpg"
+            href="/Saurav_Resume (2).jpg"
             download="Saurav_Resume.jpg"
             className="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-md gap-2"
           >
