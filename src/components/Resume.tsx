@@ -34,13 +34,13 @@ const certificates = [
     title: "DECODE JAVA+DSA 1.0",
     organization: "Physics Wallah",
     date: "January 2025",
-    image: "/lovable-uploads/d4d1d618-d75a-4bb8-aa56-a2b7bee9ee19.png"
+    image: "/saurav-uploads/d4d1d618-d75a-4bb8-aa56-a2b7bee9ee19.png"
   },
   {
     title: "Backend Development Course",
     organization: "Physics Wallah",
     date: "January 2025",
-    image: "/lovable-uploads/2f05732c-21b8-4aca-93e0-49de91ac58d7.png"
+    image: "/saurav-uploads/2f05732c-21b8-4aca-93e0-49de91ac58d7.png"
   },
   {
     title: "Backend Development Certificate",
@@ -80,7 +80,7 @@ const Resume = () => {
             A detailed view of my experiences, skills, and qualifications.
           </p>
           <a
-            href="/lovable-uploads/4d13c76d-c50c-4cbf-939f-4b6757fe05f2.png"
+            href="/saurav-uploads/4d13c76d-c50c-4cbf-939f-4b6757fe05f2.png"
             download="Saurav_Resume.png"
             className="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-md gap-2"
           >

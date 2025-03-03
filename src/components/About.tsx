@@ -36,7 +36,7 @@ const About = () => {
             </p>
             <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-primary/20">
               <img
-                src="/lovable-uploads/bb61c1c9-0661-4628-9958-f9088ce82a03.png"
+                src="/saurav-uploads/bb61c1c9-0661-4628-9958-f9088ce82a03.png"
                 alt="Profile"
                 className="w-full h-full object-cover"
               />
