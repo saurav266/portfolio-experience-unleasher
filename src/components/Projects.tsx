@@ -11,15 +11,15 @@ const projects = [
     github: "https://github.com/saurav266/Dictionary-app"
   },
   {
-    title: "Task Management App",
-    description: "Real-time collaboration tool for team productivity with drag-and-drop interface",
+    title: "Tic Tac Toe",
+    description: "Tic-tac-toe is a game for two players where they take turns marking a grid with Xs or Os. The first player to get three of their marks in a row wins",
     image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80",
-    link: "#",
+    link: "https://saurav-game-tic-tac-toe.netlify.app/",
     github: "https://github.com/saurav266"
   },
   {
-    title: "Analytics Dashboard",
-    description: "Interactive data visualization platform with real-time updates and customizable reports",
+    title: "Coming",
+    description: "",
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
     link: "#",
     github: "https://github.com/saurav266"
