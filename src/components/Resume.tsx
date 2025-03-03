@@ -37,6 +37,12 @@ const certificates = [
     image: "/lovable-uploads/d4d1d618-d75a-4bb8-aa56-a2b7bee9ee19.png"
   },
   {
+    title: "Backend Development Course",
+    organization: "Physics Wallah",
+    date: "January 2025",
+    image: "/lovable-uploads/2f05732c-21b8-4aca-93e0-49de91ac58d7.png"
+  },
+  {
     title: "Backend Development Certificate",
     organization: "Udemy",
     date: "2023",
@@ -62,7 +68,7 @@ const Resume = () => {
   const [selectedCertificate, setSelectedCertificate] = useState(null);
   
   const visibleAchievements = showAllAchievements ? achievements : achievements.slice(0, 2);
-  const visibleCertificates = showAllCertificates ? certificates : certificates.slice(0, 2);
+  const visibleCertificates = showAllCertificates ? certificates : certificates.slice(0, 3);
 
   return (
     <section className="py-24 px-6 group transition-all duration-300 hover:bg-primary/5" id="resume">
@@ -74,8 +80,8 @@ const Resume = () => {
             A detailed view of my experiences, skills, and qualifications.
           </p>
           <a
-            href="/Saurav_Resume (2).jpg"
-            download="Saurav_Resume.jpg"
+            href="/lovable-uploads/4d13c76d-c50c-4cbf-939f-4b6757fe05f2.png"
+            download="Saurav_Resume.png"
             className="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-md gap-2"
           >
             Download Resume
@@ -185,7 +191,7 @@ const Resume = () => {
                 ))}
               </div>
               
-              {certificates.length > 2 && (
+              {certificates.length > 3 && (
                 <button
                   onClick={() => setShowAllCertificates(!showAllCertificates)}
                   className="flex items-center justify-center w-full gap-2 mt-6 py-3 px-4 border border-primary/20 rounded-lg text-primary hover:bg-primary/5 transition-colors"
